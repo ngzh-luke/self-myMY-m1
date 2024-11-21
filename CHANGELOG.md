@@ -1,6 +1,6 @@
 # Changelog
 
-## Legacy Changelog
+## During Legacy Changelog
 
 - Initial Development: Initialize Mark 1 development on July 18, 2024 -> __1.0.0__
 - Initial Development: Splash screens & launcher icons added on July 18, 2024 -> __1.0.2__
