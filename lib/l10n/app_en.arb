@@ -1,0 +1,44 @@
+{
+  "@@locale": "en",
+  "helloWorld": "Hello World! s",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "heading_addNewTransaction": "Add new transaction record",
+  "heading_systemDefault": "System Default",
+  "heading_settings": "Settings",
+  "heading_language": "Language",
+  "noti_errorOccurred": "Sorry! Something went wrong, please try again!",
+  "noti_newChangeApplied": "Latest change has been applied!",
+  "@noti_newChangeApplied": {
+    "description": "Reports user that the new change has been successfully saved and applied in setting page."
+  },
+  "status_loading": "Loading...",
+  "@status_loading": {
+    "description": "Text describing that the resource is being loaded/fetched."
+  },
+  "heading_records": "Records",
+  "heading_analytics": "Analytics",
+  "theme": "Theme",
+  "themeMode": "Theme Mode",
+  "heading_home": "Home",
+  "heading_login": "Login",
+  "heading_register": "Register",
+  "previewNotification": "preview notification",
+  "notificationStyle": "Notification style",
+  "heading_resetPassword": "Reset Password",
+  "reset_password_instruction": "Please submit the email address that asscociated with your account",
+  "heading_back": "Back",
+  "heading_submit": "Submit",
+  "resetPasswordEmailSent": "Reset password email has been sent! Please check the inbox for further instructions",
+  "heading_success": "Success!",
+  "heading_email": "Email",
+  "logoutConfirmationTitle": "Logout Confirmation",
+  "logoutConfirmationMessage": "Are you sure to logout?",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "logout": "Logout",
+  "ok": "OK",
+  "heading_password": "Password",
+  "heading_goBack": "Back"
+}

@@ -1,0 +1,41 @@
+{
+  "th": [
+    "noti_errorOccurred",
+    "heading_records",
+    "heading_analytics",
+    "theme",
+    "themeMode",
+    "heading_login",
+    "heading_register",
+    "previewNotification",
+    "notificationStyle",
+    "reset_password_instruction",
+    "heading_back",
+    "heading_submit",
+    "resetPasswordEmailSent",
+    "heading_success",
+    "heading_email",
+    "logoutConfirmationTitle",
+    "logoutConfirmationMessage",
+    "logout"
+  ],
+
+  "zh": [
+    "heading_systemDefault",
+    "theme",
+    "themeMode",
+    "heading_login",
+    "heading_register",
+    "previewNotification",
+    "notificationStyle",
+    "reset_password_instruction",
+    "heading_back",
+    "heading_submit",
+    "resetPasswordEmailSent",
+    "heading_success",
+    "heading_email",
+    "logoutConfirmationTitle",
+    "logoutConfirmationMessage",
+    "logout"
+  ]
+}

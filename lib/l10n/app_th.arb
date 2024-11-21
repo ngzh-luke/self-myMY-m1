@@ -1,0 +1,26 @@
+{
+  "@@locale": "th",
+  "helloWorld": "สวัสดีโลก!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "heading_addNewTransaction": "เพิ่มรายการใหม่",
+  "heading_systemDefault": "ค่าเริ่มต้นของระบบ",
+  "heading_settings": "การตั้งค่า",
+  "heading_language": "ภาษา",
+  "noti_newChangeApplied": "บันทึกการเปลี่ยนแปลงแล้ว!",
+  "@noti_newChangeApplied": {
+    "description": "Reports user that the new change has been successfully saved and applied in setting page."
+  },
+  "status_loading": "กำลังโหลด...",
+  "@status_loading": {
+    "description": "Text describing that the resource is being loaded/fetched."
+  },
+  "heading_home": "หน้าหลัก",
+  "heading_resetPassword": "รีเซ็ตรหัสผ่าน",
+  "heading_goBack": "ย้อนกลับ",
+  "heading_password": "รหัสผ่าน",
+  "ok": "ตกลง",
+  "confirm": "ยืนยัน",
+  "cancel": "ยกเลิก"
+}
