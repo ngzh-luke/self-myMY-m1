@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mymy_m1/configs/themes/theme_provider.dart';
-import 'package:mymy_m1/configs/languages/language_provider.dart';
-import 'package:mymy_m1/services/notifications/notification_factory.dart';
+import 'package:mymy_m1/shared/configs/themes/theme_provider.dart';
+import 'package:mymy_m1/shared/configs/languages/language_provider.dart';
+import 'package:mymy_m1/services/ui_services/notifications/notification_factory.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsService with ChangeNotifier {

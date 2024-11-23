@@ -1,22 +1,36 @@
-import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart' show Firebase;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:mymy_m1/configs/languages/language_provider.dart';
-import 'package:mymy_m1/configs/themes/theme_provider.dart';
-import 'package:mymy_m1/configs/themes/theme_collections.dart';
-import 'package:mymy_m1/firebase_options.dart';
-import 'package:mymy_m1/helpers/logs/log_helper.dart';
-import 'package:mymy_m1/navigation/pages_router.dart';
-import 'package:mymy_m1/helpers/getit/get_it.dart';
-import 'package:mymy_m1/services/notifications/notification_manager.dart';
-import 'package:mymy_m1/services/settings/settings_service.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:loader_overlay/loader_overlay.dart';
+import 'package:flutter/services.dart' show DeviceOrientation, SystemChrome;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'
+    show AppLocalizations;
+import 'package:flutter_localizations/flutter_localizations.dart'
+    show
+        GlobalCupertinoLocalizations,
+        GlobalMaterialLocalizations,
+        GlobalWidgetsLocalizations;
+import 'package:flutter_native_splash/flutter_native_splash.dart'
+    show FlutterNativeSplash;
+import 'package:loader_overlay/loader_overlay.dart' show GlobalLoaderOverlay;
+import 'package:loading_animation_widget/loading_animation_widget.dart'
+    show LoadingAnimationWidget;
+import 'package:provider/provider.dart'
+    show ChangeNotifierProvider, Consumer, MultiProvider, ProxyProvider;
+import 'package:shared_preferences/shared_preferences.dart'
+    show SharedPreferences;
+
+import 'package:mymy_m1/navigation/pages_router.dart' show router;
+import 'package:mymy_m1/services/settings/settings_service.dart'
+    show SettingsService;
+import 'package:mymy_m1/services/ui_services/notifications/notification_manager.dart'
+    show NotificationManager;
+import 'package:mymy_m1/shared/configs/languages/language_provider.dart'
+    show LanguageProvider;
+import 'package:mymy_m1/shared/configs/themes/theme_collections.dart'
+    show ThemeCollections;
+import 'package:mymy_m1/shared/configs/themes/theme_provider.dart'
+    show ThemeProvider;
+import 'package:mymy_m1/utils/dependency_inj/get_it.dart'
+    show setupDependencies;
 
 bool isBigScreen(BuildContext context) {
   final double width = MediaQuery.of(context).size.width;
@@ -84,28 +98,39 @@ void main() async {
           dispose: (_, manager) => manager.dispose(),
         ),
       ],
-      child: const MyApp(),
+      child: const App(),
     ),
   );
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<App> createState() => _AppState();
 }
 
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+class _AppState extends State<App> with WidgetsBindingObserver {
   late bool _isLoading;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     initialization();
-
     WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.detached) {
+      // TODO: add dispose()
+    }
   }
 
   void initialization() async {
@@ -122,24 +147,10 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     FlutterNativeSplash.remove();
   }
 
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    // TODO: add dispose()
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.detached) {
-      // TODO: add dispose()
-    }
-  }
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // // Check if the device's screen is big
+    // Check if the device's screen is big
     if (!isBigScreen(context)) {
       // Lock orientation to portrait
       SystemChrome.setPreferredOrientations([
@@ -164,7 +175,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               )
             : SafeArea(
                 child: GlobalLoaderOverlay(
-                  useDefaultLoading: false,
                   overlayWholeScreen: true,
                   overlayColor:
                       Theme.of(context).colorScheme.primary.withOpacity(0.3),

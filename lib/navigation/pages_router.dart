@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mymy_m1/pages/analytics.dart';
-import 'package:mymy_m1/pages/authentication/reset_password_page.dart';
-import 'package:mymy_m1/pages/home.dart';
-import 'package:mymy_m1/pages/new_transaction/new_transaction.dart';
-import 'package:mymy_m1/pages/records.dart';
-import 'package:mymy_m1/pages/settings/settings.dart';
+import 'package:mymy_m1/ui/pages/analytics.dart';
+import 'package:mymy_m1/ui/pages/authentication/reset_password_page.dart';
+import 'package:mymy_m1/ui/pages/home.dart';
+import 'package:mymy_m1/ui/pages/new_transaction/new_transaction.dart';
+import 'package:mymy_m1/ui/pages/records.dart';
+import 'package:mymy_m1/ui/pages/settings/settings.dart';
 import 'package:mymy_m1/navigation/nav_bar.dart';
 import 'package:mymy_m1/navigation/start.dart';
 

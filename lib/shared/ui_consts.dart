@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class UiConsts {
   /// SizedBox(height: 10, width: 10);
@@ -23,17 +22,12 @@ class UiConsts {
     width: 5,
   );
 
-  /// SizedBox(height: 7, width: 7,)
-  static const spaceBetweenElementsInTheSectionLarge = SizedBox(
-    height: 7,
-    width: 7,
-  );
+  /// SizedBox(height: 7, width: 7)
+  static const spaceBetweenElementsInTheSectionLarge =
+      SizedBox(height: 7, width: 7);
 
   /// double 50
   static const double largeMaterialBtnHeight = 50;
-
-  /// Gap(3)
-  static const spaceForTextAndElement = Gap(3);
 
   ///  Padding(padding:  EdgeInsets.symmetric(horizontal: 25), child: Divider(thickness: 0.5,))
   static const horizontalDividerBetweenVerticalSections = Padding(
